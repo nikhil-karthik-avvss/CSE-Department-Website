@@ -1,0 +1,250 @@
+<html>
+<head>
+    <title>Placements</title>
+    <script src="script/load-header-footer.js"></script>
+    <link rel="icon" type="image/png" href="images/ssn-logo.png">
+    <link rel="stylesheet" href="styles/header-and-footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f6f9;
+        }
+
+        .content {
+            padding: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #2d3e50;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #1e88e5;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #eef3f9;
+        }
+
+        /* Charts */
+        .charts {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            justify-content: center;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            flex: 1 1 450px;
+            max-width: 500px;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        /* Offers Section */
+        .offers {
+            margin-top: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .offers h3 {
+            margin-bottom: 15px;
+            color: #2d3e50;
+        }
+
+        .offers ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .offers li {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .offers li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <div class="content">
+        <h2>Placement Statistics</h2>
+        <p>
+            The department is keen about inculcating employability skills for the students 
+            to succeed in landing dream job offers. A Mock placement drive for the III year 
+            students is organized every year to give an experience of real placement drives. 
+            For the past several years, our students have been placed in top companies like 
+            <b>MotorQ, Adobe, Paypal, Amazon, Media.net, eBay, Equinix, Google, Avalara</b>. 
+            The recent placement highlights are given below.
+        </p>
+
+        <h3>BE CSE Placement Highlights</h3>
+        <table>
+            <tr>
+                <th>Batch</th>
+                <th>Placed Students</th>
+                <th>% of Placement (eligible)</th>
+                <th>Highest Salary (LPA)</th>
+                <th>Average Salary (LPA)</th>
+            </tr>
+            <tr>
+                <td>2020-24</td>
+                <td>105</td>
+                <td>100%</td>
+                <td>88</td>
+                <td>14.18</td>
+            </tr>
+            <tr>
+                <td>2019-23</td>
+                <td>117</td>
+                <td>100%</td>
+                <td>102</td>
+                <td>16.46</td>
+            </tr>
+            <tr>
+                <td>2018-22</td>
+                <td>187</td>
+                <td>100%</td>
+                <td>117</td>
+                <td>14.38</td>
+            </tr>
+            <tr>
+                <td>2017-21</td>
+                <td>161</td>
+                <td>99.4%</td>
+                <td>64</td>
+                <td>10.77</td>
+            </tr>
+            <tr>
+                <td>2016-20</td>
+                <td>94</td>
+                <td>98%</td>
+                <td>65</td>
+                <td>10.19</td>
+            </tr>
+        </table>
+
+        <h3>Year-wise Placement Statistics</h3>
+        <div class="charts">
+            <div class="chart-container">
+                <canvas id="offerChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="placementChart"></canvas>
+            </div>
+        </div>
+
+        <div class="offers">
+            <h3>Some Top Offers</h3>
+            <ul>
+                <li>2024 MotorQ – 88L</li>
+                <li>2024 DE Shaw – 52L</li>
+                <li>2024 Paypal – 34L</li>
+                <li>2023 MotorQ – 102L</li>
+                <li>2023 DE Shaw – 35L</li>
+                <li>2022 MotorQ – 117L</li>
+                <li>2022 Amazon – 39L</li>
+                <li>2021 Atlassian – 50L</li>
+            </ul>
+        </div>
+    </div>
+    <div id="footer"></div>
+
+    <script>
+        // Offer Types Pie Chart
+        new Chart(document.getElementById("offerChart"), {
+            type: 'pie',
+            data: {
+                labels: ["Marquee", "Super Dream", "Dream", "Regular"],
+                datasets: [{
+                    data: [10, 55, 29, 6],
+                    backgroundColor: ["#1e88e5", "#e53935", "#8e24aa", "#fbc02d"],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: { display: true, text: '2024 Batch - Offer Types' }
+                }
+            }
+        });
+
+        // Placement Percentage Bar Chart
+        new Chart(document.getElementById("placementChart"), {
+            type: 'bar',
+            data: {
+                labels: ["2021", "2022", "2023", "2024"],
+                datasets: [{
+                    label: "% of Placement",
+                    data: [99.4, 100, 100, 100],
+                    backgroundColor: "#ff7043",
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        min: 99,
+                        max: 100,
+                        ticks: {
+                            stepSize: 0.2
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    title: { display: true, text: 'Year-wise Placement Percentage' }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

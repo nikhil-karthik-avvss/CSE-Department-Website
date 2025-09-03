@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <script src="script/load-header-footer.js"></script>
+  <link rel="icon" type="image/png" href="images/ssn-logo.png">
+  <link rel="stylesheet" href="styles/header-and-footer.css">
+  <link rel="stylesheet" href="loader.css">
+  <div id="loader-container"></div>
+  <script src="loader.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #004080;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    .map {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px;
+      background: #004080;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #0066cc;
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <div class="container">
+    <h2>Contact Us</h2>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <p><strong>Address:</strong> Rajiv Gandhi Salai (Old Mahabaliburam Road), Kalavakkam, Thiruporur Taluk, Chengalpattu District.</p>
+      <p><strong>Phone:</strong> +91 98765 43210</p>
+      <p><strong>Email:</strong> contact@ssn.edu.in</p>
+    </div>
+
+    <!-- Google Map -->
+    <div class="map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2214.159456579431!2d80.20093061016817!3d12.751450554823164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1756816070494!5m2!1sen!2sin" 
+        allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Contact Form -->
+    <form id="contactForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    // Simple JS form validation
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      // Basic email check
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        alert("Please enter a valid email.");
+        return;
+      }
+
+      alert("Message sent successfully!");
+      document.getElementById("contactForm").reset();
+    });
+  </script>
+</body>
+</html>

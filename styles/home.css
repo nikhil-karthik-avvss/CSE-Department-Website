@@ -1,0 +1,344 @@
+/* === Hero Section === */
+.hero {
+    background: linear-gradient(135deg, #0077cc, #00bcd4);
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px 80px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    animation: fadeSlideIn 1s ease-out;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #eaf6ff;
+}
+
+/* === Highlights Section === */
+.highlights {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.highlights h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #0077cc;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.highlights ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    padding: 0;
+    list-style: none;
+}
+
+.highlights li {
+    background: #ffffffdd;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+/* Hover animation */
+.highlights li:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Icon bullets */
+.highlights li::before {
+    content: "★";
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    color: #00bcd4;
+    font-size: 16px;
+    font-weight: bold;
+}
+.highlights li {
+    padding-left: 45px; /* spacing for icon */
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+    .highlights h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 26px;
+    }
+    .hero p {
+        font-size: 14px;
+    }
+}
+
+
+body{
+    background-color: #dbe4ee;
+}
+
+/* Page Container */
+body {
+    background: linear-gradient(135deg, #dbe4ee, #f8f9fb);
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* Main content styling */
+h2 {
+    text-align: center;
+    margin: 40px 20px 20px 20px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #0077cc;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeSlideIn 0.8s forwards 0.2s; /* animate on load */
+}
+
+/* Decorative line under heading */
+h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #0077cc, #00bcd4);
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Paragraph styling */
+p {
+    max-width: 900px;
+    margin: 20px auto 50px auto;
+    font-size: 16px;
+    color: #555;
+    padding: 0 20px;
+    text-align: justify;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 0.8s forwards 0.4s; /* staggered animation */
+}
+
+/* Fade + slide-in animation */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 26px;
+    }
+    p {
+        font-size: 15px;
+        margin: 15px 20px 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 22px;
+    }
+    p {
+        font-size: 14px;
+        margin: 10px 15px 30px 15px;
+    }
+}
+
+/* Vision & Mission Section */
+.vm-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    background: #ffffffdd;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    backdrop-filter: blur(6px);
+}
+
+.vm-container {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.vm-container:last-child {
+    margin-bottom: 0;
+}
+
+.vm-section h2 {
+    font-size: 26px;
+    color: #0077cc;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    position: relative;
+    font-weight: 700;
+}
+
+.vm-section h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #0077cc, #00bcd4);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.vm-text {
+    font-size: 16px;
+    color: #444;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.vm-list {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.vm-list li {
+    position: relative;
+    font-size: 15px;
+    color: #555;
+    padding-left: 28px;
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+/* Custom bullet */
+.vm-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #0077cc;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #0077cc, #00bcd4);
+    color: white;
+    text-align: center;
+    padding: 100px 20px 80px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    animation: fadeSlideIn 1s ease-out;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #eaf6ff;
+}
+
+/* Highlights Section */
+.highlights {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.highlights h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #0077cc;
+    margin-bottom: 40px;
+}
+
+.highlights ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    padding: 0;
+    list-style: none;
+}
+
+.highlights li {
+    background: #ffffffdd;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+}
+
+.highlights li:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Nice icons instead of ✔ */
+.highlights li::before {
+    content: "★";
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    color: #00bcd4;
+    font-size: 16px;
+    font-weight: bold;
+}
+.highlights li {
+    padding-left: 45px; /* adjust for icon */
+}

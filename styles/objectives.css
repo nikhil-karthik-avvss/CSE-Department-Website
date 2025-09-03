@@ -1,0 +1,130 @@
+body {
+    background: linear-gradient(135deg, #dbe4ee, #f8f9fb);
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.7;
+}
+
+        h2 {
+            text-align: center;
+            margin: 40px 20px 20px 20px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #0077cc;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #0077cc, #00bcd4);
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+
+        .program-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 50px 0 20px 0;
+            color: #005fa3;
+        }
+
+        .objective-section {
+            max-width: 1000px;
+            margin: 20px auto 50px auto;
+            padding: 30px 25px;
+            background: #ffffffdd;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            backdrop-filter: blur(6px);
+        }
+
+        .objective-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .objective-section li {
+            position: relative;
+            font-size: 16px;
+            color: #444;
+            padding-left: 28px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .objective-section li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #0077cc;
+            font-weight: bold;
+        }
+
+        /* Animations */
+        .objective-section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlideIn 0.8s forwards;
+        }
+
+        .objective-section:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        .objective-section:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        .objective-section:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 24px;
+            }
+            .program-title {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 20px;
+            }
+            .program-title {
+                font-size: 18px;
+            }
+            .objective-section {
+                padding: 20px 15px;
+            }
+        }
+h1 {
+    text-align: center;
+    margin: 40px 20px 20px 20px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #0077cc;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeSlideIn 0.8s forwards 0.2s; /* animate on load */
+}

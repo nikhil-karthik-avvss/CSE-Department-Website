@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty</title>
+    <script src="script/load-header-footer.js" defer></script>
+    <link rel="icon" type="image/png" href="images/ssn-logo.png">
+    <link rel="stylesheet" href="styles/header-and-footer.css">
+    <link rel="stylesheet" href="styles/faculty.css">
+    <script src="script/faculty.js" defer></script>
+    <link rel="stylesheet" href="loader.css">
+  <div id="loader-container"></div>
+  <script src="loader.js" defer></script>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="faculty-container">
+        <h2>Faculty Profiles</h2>
+        <input type="text" id="searchInput" placeholder="Search for faculty..." onkeyup="filterFaculty()">
+        <div id="facultyList" class="faculty-list">
+            <!-- JS will dynamically populate faculty cards here -->
+        </div>
+    </main>
+
+    <div id="footer"></div>
+</body>
+</html>

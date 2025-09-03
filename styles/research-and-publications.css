@@ -1,0 +1,51 @@
+main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 25px;
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 28px;
+            border-left: 6px solid #81a4cd;
+            padding-left: 12px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.7;
+            font-size: 16px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin: 25px 0;
+        }
+
+        .research-card {
+            background: #f8fbff;
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            text-align: center;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+        }
+
+        .research-card span {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 15px;
+        }
